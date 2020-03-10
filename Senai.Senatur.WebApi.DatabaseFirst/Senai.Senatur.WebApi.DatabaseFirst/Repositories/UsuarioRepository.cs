@@ -26,6 +26,13 @@ namespace Senai.Senatur.WebApi.DatabaseFirst.Repositories
             ctx.SaveChanges();
         }
 
+        public Usuario BuscarPorEmailSenha(string email, string senha)
+        {
+            Usuario usuarioBuscado = ctx.Usuario.Find(email, senha);
+
+            return usuarioBuscado;
+        }
+
         public Usuario BuscarPorId(int id)
         {
             return ctx.Usuario.FirstOrDefault(U => U.IdUsuario == id); 

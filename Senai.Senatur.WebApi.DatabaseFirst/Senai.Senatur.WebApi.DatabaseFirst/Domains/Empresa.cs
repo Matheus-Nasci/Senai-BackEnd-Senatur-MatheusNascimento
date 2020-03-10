@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Senai.Senatur.WebApi.DatabaseFirst.Domains
 {
@@ -11,6 +12,8 @@ namespace Senai.Senatur.WebApi.DatabaseFirst.Domains
         }
 
         public int IdEmpresa { get; set; }
+
+        [Required(ErrorMessage = "É Preciso o nome da Empresa")]
         public string NomeEmpresa { get; set; }
 
         public ICollection<Pacote> Pacote { get; set; }

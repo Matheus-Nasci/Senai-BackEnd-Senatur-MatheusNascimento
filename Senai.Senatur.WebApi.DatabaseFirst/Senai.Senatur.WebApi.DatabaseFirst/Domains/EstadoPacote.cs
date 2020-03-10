@@ -11,6 +11,7 @@ namespace Senai.Senatur.WebApi.DatabaseFirst.Domains
         }
 
         public int IdEstadoPacote { get; set; }
+
         public string Estado { get; set; }
 
         public ICollection<Pacote> Pacote { get; set; }

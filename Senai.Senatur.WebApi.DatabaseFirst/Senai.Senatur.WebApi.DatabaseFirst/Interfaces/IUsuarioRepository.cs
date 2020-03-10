@@ -17,5 +17,7 @@ namespace Senai.Senatur.WebApi.DatabaseFirst.Interfaces
         void Atualizar(int id, Usuario usuarioAtualizado);
 
         void Cadastrar(Usuario novoUsuario);
+
+        Usuario BuscarPorEmailSenha(string email, string senha);
     }
 }
