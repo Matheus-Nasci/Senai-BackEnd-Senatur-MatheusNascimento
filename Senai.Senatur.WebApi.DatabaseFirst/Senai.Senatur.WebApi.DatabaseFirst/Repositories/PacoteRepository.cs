@@ -21,8 +21,8 @@ namespace Senai.Senatur.WebApi.DatabaseFirst.Repositories
             pacote.DataVolta = pacoteAtualizado.DataVolta;
             pacote.Valor = pacoteAtualizado.Valor;
             pacote.Cidade = pacoteAtualizado.Cidade;
+            pacote.EstadoPacote = pacoteAtualizado.EstadoPacote;
             pacote.IdEmpresaNavigation = pacoteAtualizado.IdEmpresaNavigation;
-            pacote.IdEstadoPacoteNavigation = pacoteAtualizado.IdEstadoPacoteNavigation;
 
             ctx.Pacote.Update(pacoteAtualizado);
 
@@ -54,5 +54,20 @@ namespace Senai.Senatur.WebApi.DatabaseFirst.Repositories
             return ctx.Pacote.ToList();
 
         }
-    }
+
+        public List<Pacote> BuscarPacoteAtivo()
+        {
+            return ctx.Pacote.ToList().FindAll(p => p.EstadoPacote == true);
+        }
+
+        public List<Pacote> BuscarPacoteInvativo()
+        {
+            return ctx.Pacote.ToList().FindAll(p => p.EstadoPacote == false);
+        }
+
+        public List<Pacote> ListarCidade(string nomeCidade)
+        {
+            return ctx.Pacote.Where(p => p.Cidade.Contains(nomeCidade)).ToList();
+        }
+    } 
 }

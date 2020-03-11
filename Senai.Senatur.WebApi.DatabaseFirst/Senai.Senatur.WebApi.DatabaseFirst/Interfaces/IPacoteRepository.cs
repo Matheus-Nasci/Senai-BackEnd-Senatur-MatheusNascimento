@@ -10,6 +10,12 @@ namespace Senai.Senatur.WebApi.DatabaseFirst.Interfaces
     {
         List<Pacote> Listar();
 
+        List<Pacote> BuscarPacoteAtivo();
+
+        List<Pacote> BuscarPacoteInvativo();
+
+        List<Pacote> ListarCidade(string nomeCidade);
+
         Pacote BuscarPorId(int id);
 
         void Deletar(int id);
@@ -17,6 +23,5 @@ namespace Senai.Senatur.WebApi.DatabaseFirst.Interfaces
         void AtualizarPorId(int id, Pacote pacoteAtualizado);
 
         void Cadastrar(Pacote novoPacote);
-
     }
 }

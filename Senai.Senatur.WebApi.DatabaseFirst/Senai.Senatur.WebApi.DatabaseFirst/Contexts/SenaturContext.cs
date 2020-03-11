@@ -16,7 +16,6 @@ namespace Senai.Senatur.WebApi.DatabaseFirst.Domains
         }
 
         public virtual DbSet<Empresa> Empresa { get; set; }
-        public virtual DbSet<EstadoPacote> EstadoPacote { get; set; }
         public virtual DbSet<Pacote> Pacote { get; set; }
         public virtual DbSet<TipoUsuario> TipoUsuario { get; set; }
         public virtual DbSet<Usuario> Usuario { get; set; }
@@ -46,20 +45,6 @@ namespace Senai.Senatur.WebApi.DatabaseFirst.Domains
                     .IsUnicode(false);
             });
 
-            modelBuilder.Entity<EstadoPacote>(entity =>
-            {
-                entity.HasKey(e => e.IdEstadoPacote);
-
-                entity.HasIndex(e => e.Estado)
-                    .HasName("UQ__EstadoPa__36DF552F898C8EE2")
-                    .IsUnique();
-
-                entity.Property(e => e.Estado)
-                    .IsRequired()
-                    .HasMaxLength(150)
-                    .IsUnicode(false);
-            });
-
             modelBuilder.Entity<Pacote>(entity =>
             {
                 entity.HasKey(e => e.IdPacote);
@@ -79,15 +64,13 @@ namespace Senai.Senatur.WebApi.DatabaseFirst.Domains
 
                 entity.Property(e => e.Valor).HasColumnType("decimal(10, 2)");
 
+                entity.Property(e => e.EstadoPacote).HasDefaultValueSql("((1))");
+
                 entity.HasOne(d => d.IdEmpresaNavigation)
                     .WithMany(p => p.Pacote)
                     .HasForeignKey(d => d.IdEmpresa)
                     .HasConstraintName("FK__Pacote__IdEmpres__4F7CD00D");
 
-                entity.HasOne(d => d.IdEstadoPacoteNavigation)
-                    .WithMany(p => p.Pacote)
-                    .HasForeignKey(d => d.IdEstadoPacote)
-                    .HasConstraintName("FK__Pacote__IdEstado__5070F446");
             });
 
             modelBuilder.Entity<TipoUsuario>(entity =>

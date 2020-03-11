@@ -12,10 +12,9 @@ namespace Senai.Senatur.WebApi.DatabaseFirst.Domains
         public DateTime DataVolta { get; set; }
         public decimal? Valor { get; set; }
         public string Cidade { get; set; }
+        public bool EstadoPacote { get; set; }
         public int? IdEmpresa { get; set; }
-        public int? IdEstadoPacote { get; set; }
 
         public Empresa IdEmpresaNavigation { get; set; }
-        public EstadoPacote IdEstadoPacoteNavigation { get; set; }
     }
 }

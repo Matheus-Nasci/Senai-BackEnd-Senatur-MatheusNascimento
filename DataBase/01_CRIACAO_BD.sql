@@ -9,12 +9,6 @@ CREATE TABLE Empresa (
 );
 GO
 
-CREATE TABLE EstadoPacote (
-	IdEstadoPacote INT PRIMARY KEY IDENTITY,
-	Estado			VARCHAR(150) NOT NULL UNIQUE
-);
-GO
-
 CREATE TABLE Pacote (
 	IdPacote		INT PRIMARY KEY IDENTITY,
 	NomePacote		VARCHAR(255) NOT NULL,
@@ -23,8 +17,8 @@ CREATE TABLE Pacote (
 	DataVolta		DATETIME2 NOT NULL,
 	Valor			DECIMAL (10,2),
 	Cidade			VARCHAR (255),
-	IdEmpresa		INT FOREIGN KEY REFERENCES Empresa(IdEmpresa),
-	IdEstadoPacote	INT FOREIGN KEY REFERENCES EstadoPacote(IdEstadoPacote)
+	EstadoPacote	BIT DEFAULT (1) NOT NULL, -- (1 == True)
+	IdEmpresa		INT FOREIGN KEY REFERENCES Empresa(IdEmpresa),	
 );
 GO
 
@@ -41,3 +35,5 @@ CREATE TABLE Usuario (
 	IdTipoUsuario	INT FOREIGN KEY REFERENCES TipoUsuario(IdTipoUsuario),
 );
 GO
+
+

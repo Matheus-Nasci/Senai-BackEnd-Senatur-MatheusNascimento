@@ -17,7 +17,7 @@ namespace Senai.Senatur.WebApi.DatabaseFirst.Controllers
 
     [ApiController]
     [Authorize]
-    public class PacoteController  : ControllerBase
+    public class PacoteController : ControllerBase
     {
         private IPacoteRepository _pacoteRepository;
 
@@ -114,6 +114,38 @@ namespace Senai.Senatur.WebApi.DatabaseFirst.Controllers
             {
                 return NotFound("Id Especificado não encontrada, ou não existe no Banco de Dados");
             }
+
+        }
+
+        [HttpGet("Ativo")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public IActionResult BuscarPacoteAtivo()
+        {
+            _pacoteRepository.BuscarPacoteAtivo();
+
+            return Ok(_pacoteRepository.BuscarPacoteAtivo());
+        }
+
+        [HttpGet("Inativo")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public IActionResult BuscarPacoteInativo()
+        {
+            _pacoteRepository.BuscarPacoteInvativo();
+
+            return Ok(_pacoteRepository.BuscarPacoteInvativo());
+
+        }
+
+        [HttpGet("cidade/{nomeCidade}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public IActionResult ListarCidade(string nomeCidade)
+        {
+            _pacoteRepository.ListarCidade(nomeCidade);
+
+            return Ok(_pacoteRepository.ListarCidade(nomeCidade));
 
         }
     }
