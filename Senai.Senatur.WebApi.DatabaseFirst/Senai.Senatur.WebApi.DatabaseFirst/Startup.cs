@@ -20,17 +20,20 @@ namespace Senai.Senatur.WebApi.DatabaseFirst
             services
                 .AddMvc()
                 .SetCompatibilityVersion(Microsoft.AspNetCore.Mvc.CompatibilityVersion.Version_2_1);
+
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Senai.Peoples.WebApi", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });
 
                 var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
                 var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
                 c.IncludeXmlComments(xmlPath);
+
             });
+        
 
 
-            services
+        services
                 .AddAuthentication(options =>
                 {
                     options.DefaultAuthenticateScheme = "JwtBearer";
@@ -70,8 +73,7 @@ namespace Senai.Senatur.WebApi.DatabaseFirst
 
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Senai.Senatur.WebApi");
-                c.RoutePrefix = string.Empty;
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
             });
 
             app.UseAuthentication();

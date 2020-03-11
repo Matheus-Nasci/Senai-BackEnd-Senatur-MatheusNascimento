@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Senai.Senatur.WebApi.DatabaseFirst</name>
+    </assembly>
+    <members>
+        <member name="M:Senai.Senatur.WebApi.DatabaseFirst.Controllers.LoginController.Post(Senai.InLock.WebApi.ViewModels.LoginViewModel)">
+            <summary>
+            Valida o usuário
+            </summary>
+            <param name="login">Objeto login que contém o e-mail e a senha do usuário</param>
+            <returns>Retorna um token com as informações do usuário</returns>
+        </member>
+        <member name="M:Senai.Senatur.WebApi.DatabaseFirst.Controllers.PacoteController.Get">
+            <summary>
+            Metodo Listar Pacotes de Viagem 
+            </summary>
+            <returns>Lista de Pacotes</returns>
+        </member>
+        <member name="M:Senai.Senatur.WebApi.DatabaseFirst.Controllers.PacoteController.GetById(System.Int32)">
+            <summary>
+            Buscar o Pacote por ID na URL 
+            </summary>
+            <param name="id">BuscarPorId</param>
+            <returns>_pacoteRepository</returns>
+        </member>
+        <member name="M:Senai.Senatur.WebApi.DatabaseFirst.Controllers.PacoteController.Cadastrar(Senai.Senatur.WebApi.DatabaseFirst.Domains.Pacote)">
+            <summary>
+            Cadastrar Pacotes
+            </summary>
+            <param name="novoPacote"></param>
+            <returns>Novo Pacote Cadastrado</returns>
+            
+        </member>
+        <member name="M:Senai.Senatur.WebApi.DatabaseFirst.Controllers.PacoteController.Deletar(System.Int32)">
+            <summary>
+            Deleta um Pacote por ID
+            </summary>
+            <param name="id">IdPacote</param>
+            <returns></returns>
+        </member>
+        <member name="M:Senai.Senatur.WebApi.DatabaseFirst.Controllers.PacoteController.AtualizarPorId(System.Int32,Senai.Senatur.WebApi.DatabaseFirst.Domains.Pacote)">
+            <summary>
+            Atualiza um Pacote pela URL usando ID
+            </summary>
+            <param name="id">IdPacote</param>
+            <param name="pacoteAtualizado"></param>
+            <returns>Um Pacote com Informações Atualizadas</returns>
+        </member>
+    </members>
+</doc>

@@ -11,11 +11,9 @@ namespace Senai.Senatur.WebApi.DatabaseFirst.Repositories
     {
         SenaturContext ctx = new SenaturContext();
 
-        public void Atualizar(int id, Pacote pacoteAtualizado)
+        public void AtualizarPorId(int id, Pacote pacoteAtualizado)
         {
             Pacote pacote = ctx.Pacote.Find(id);
-
-            pacote = BuscarPorId(pacoteAtualizado.IdPacote);
 
             pacote.NomePacote = pacoteAtualizado.NomePacote;
             pacote.Descricao = pacoteAtualizado.Descricao;

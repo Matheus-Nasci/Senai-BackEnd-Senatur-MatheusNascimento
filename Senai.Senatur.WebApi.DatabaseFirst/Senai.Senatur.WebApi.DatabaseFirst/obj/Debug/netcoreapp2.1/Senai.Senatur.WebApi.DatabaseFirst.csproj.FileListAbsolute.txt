@@ -12,3 +12,5 @@ C:\Users\44337427830\Desktop\Senai-BackEnd-Senatur-MatheusNascimento\Senai.Senat
 C:\Users\44337427830\Desktop\Senai-BackEnd-Senatur-MatheusNascimento\Senai.Senatur.WebApi.DatabaseFirst\Senai.Senatur.WebApi.DatabaseFirst\bin\Debug\netcoreapp2.1\Senai.Senatur.WebApi.DatabaseFirst.pdb
 C:\Users\44337427830\Desktop\Senai-BackEnd-Senatur-MatheusNascimento\Senai.Senatur.WebApi.DatabaseFirst\Senai.Senatur.WebApi.DatabaseFirst\obj\Debug\netcoreapp2.1\Senai.Senatur.WebApi.DatabaseFirst.dll
 C:\Users\44337427830\Desktop\Senai-BackEnd-Senatur-MatheusNascimento\Senai.Senatur.WebApi.DatabaseFirst\Senai.Senatur.WebApi.DatabaseFirst\obj\Debug\netcoreapp2.1\Senai.Senatur.WebApi.DatabaseFirst.pdb
+C:\Users\44337427830\Desktop\Senai-BackEnd-Senatur-MatheusNascimento\Senai.Senatur.WebApi.DatabaseFirst\Senai.Senatur.WebApi.DatabaseFirst\bin\Debug\netcoreapp2.1\Senai.Senatur.WebApi.DatabaseFirst.xml
+C:\Users\44337427830\Desktop\Senai-BackEnd-Senatur-MatheusNascimento\Senai.Senatur.WebApi.DatabaseFirst\Senai.Senatur.WebApi.DatabaseFirst\obj\Debug\netcoreapp2.1\Senai.Senatur.WebApi.DatabaseFirst.xml

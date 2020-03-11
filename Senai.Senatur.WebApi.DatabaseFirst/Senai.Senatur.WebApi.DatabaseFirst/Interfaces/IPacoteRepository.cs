@@ -14,8 +14,9 @@ namespace Senai.Senatur.WebApi.DatabaseFirst.Interfaces
 
         void Deletar(int id);
 
-        void Atualizar(int id, Pacote pacoteAtualizado);
+        void AtualizarPorId(int id, Pacote pacoteAtualizado);
 
         void Cadastrar(Pacote novoPacote);
+
     }
 }
